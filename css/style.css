@@ -81,21 +81,51 @@ body{
     color: #111;
 }
 
-@media screen and (max-width:574px){
-    .greetings{
-        display: block;
-        font-size: 4rem;
-        font-weight: 800;
-        text-align: center;
-    }
-    .description{
-        font-size: 2rem;
-        text-align: center;
-        margin-right: 5%;
-    }
-    
-    .button a{
-        font-size: 1rem;
-        
-    }
+@media screen and (max-width: 574px) {
+  /* 1. Permitir que el contenido fluya hacia abajo si es necesario */
+  body, html {
+    height: auto !important;
+    overflow-y: auto !important;
+  }
+
+  /* 2. Ajustar el contenedor principal */
+  .container {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 3. Título principal: Menos tamaño para que no ocupe media pantalla */
+  .greetings {
+    font-size: 1.6rem !important; /* Tamaño más prudente */
+    margin-bottom: 10px;
+    line-height: 1.2;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* 4. La descripción: Aquí es donde se amontona todo */
+  .description {
+    font-size: 1rem !important; /* Tamaño de lectura cómodo */
+    line-height: 1.4;
+    margin: 10px 0;
+    width: 95%;
+    text-align: center;
+    letter-spacing: normal !important; /* Quitamos espacios raros */
+  }
+
+  /* 5. La imagen de las flores: Hacerla más pequeña para que deje espacio al texto */
+  .flowers-container img, .flowers-container svg {
+    max-width: 180px; /* Reducimos el tamaño visual de las flores */
+    height: auto;
+    margin: 15px 0;
+  }
+
+  /* 6. Firma final: Para que no se pierda al fondo */
+  .final-signature {
+    font-size: 0.9rem;
+    margin-top: 20px;
+    padding-bottom: 40px; /* Espacio extra al final para que no choque con el borde */
+  }
 }
